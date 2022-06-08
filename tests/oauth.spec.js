@@ -33,25 +33,13 @@ describe(pack.name, () => {
     })
     const loginSel = '#login'
     const passSel = '#password'
-    await page.waitFor(() => {
-      const srcSelector = '#login'
-      return document.querySelectorAll(srcSelector).length
-    })
-    console.log('user', USER)
-    console.log('pass', PASS)
-    await page.waitFor(3000)
+    await page.waitForSelector('#login')
     await page.type(loginSel, USER)
     await page.type(passSel, PASS)
     await page.click('button.pb-button')
-    await page.waitFor(() => {
-      const srcSelector = 'button.cui5-button--variant-primary'
-      return document.querySelectorAll(srcSelector).length
-    })
+    await page.waitForSelector('button.cui5-button--variant-primary')
     await page.click('button.cui5-button--variant-primary')
-    await page.waitFor(() => {
-      const srcSelector = '#result-r'
-      return document.querySelectorAll(srcSelector).length
-    })
+    await page.waitForSelector('#result-r')
     const text = await page.$eval('#result-r', (e) => e.textContent)
     console.log(text)
     expect(text.includes(USER)).toBe(true)
