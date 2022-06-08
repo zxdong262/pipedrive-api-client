@@ -1,5 +1,8 @@
 # PipeDrive API wrapper for JavaScript
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge)](https://github.com/zxdong262/pipedrive-api-client/actions)
+[![Coverage Status](https://coveralls.io/repos/github/zxdong262/pipedrive-api-client/badge.svg?branch=release)](https://coveralls.io/github/zxdong262/pipedrive-api-client?branch=release)
+
 PipeDrive API wrapper. [api docs](https://developers.pipedrive.com/docs/api/v1).
 
 ## Installation

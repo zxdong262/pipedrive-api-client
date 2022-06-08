@@ -20,7 +20,15 @@ app.get('/pipedrive-oauth', async function (req, res) {
     .then(d => d.data)
     .catch(console.log)
   console.log(r)
-  res.send(JSON.stringify(r || 'err'))
+  res.send(
+    `<div id='result-r'>
+      ${JSON.stringify(r || 'err')}
+    </div>
+    <div id='token-r'>
+      ${JSON.stringify(pd.token)}
+    </div>
+`
+  )
 })
 
 app.listen(6066, '127.0.0.1', () => {
