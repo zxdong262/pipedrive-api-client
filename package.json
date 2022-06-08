@@ -1,0 +1,72 @@
+{
+  "name": "pipedrive-api-client",
+  "version": "0.1.0",
+  "description": "PipeDrive API wrapper.",
+  "author": "ZHAO Xudong <zxdong@gmail.com>",
+  "license": "MIT",
+  "main": "dist/pipedrive.js",
+  "module": "src/pipedrive.ts",
+  "types": "dist/pipedrive",
+  "scripts": {
+    "test": "jest",
+    "lint": "./node_modules/.bin/standard",
+    "release": "webpack --progress --config webpack.config.babel.js",
+    "prepublishOnly": "npm run release"
+  },
+  "peerDependencies": {
+    "axios": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/register": "^7.17.7",
+    "@tsconfig/recommended": "^1.0.1",
+    "axios": "^0.27.2",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.1",
+    "babel-loader": "^8.2.5",
+    "dotenv": "^16.0.1",
+    "dotenv-override-true": "^6.2.2",
+    "express": "^4.18.1",
+    "jest": "^28.1.1",
+    "standard": "^16.0.4",
+    "ts-loader": "^9.3.0",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "roots": [
+      "./tests"
+    ],
+    "setupFiles": [
+      "dotenv-override-true/config"
+    ],
+    "silent": false
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "*-compiled.js",
+      "/dist/"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "pipedrive",
+    "wrapper",
+    "js",
+    "sdk"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}
