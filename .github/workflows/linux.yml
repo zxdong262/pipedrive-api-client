@@ -31,7 +31,13 @@ jobs:
 
     # script:
     - run: npm run release
-    - run: node bin/server &
+
+    - name: run server
+      run: node bin/server &
+      env:
+        CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
 
     - name: test
       run: npm run test
