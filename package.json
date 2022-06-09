@@ -8,7 +8,7 @@
   "module": "src/pipedrive.ts",
   "types": "dist/pipedrive",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "standard",
     "release": "webpack --progress --config webpack.config.babel.js",
     "prepublishOnly": "npm run release",
