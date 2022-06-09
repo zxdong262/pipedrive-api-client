@@ -49,7 +49,10 @@
     "setupFiles": [
       "dotenv-override-true/config"
     ],
-    "silent": false
+    "silent": false,
+    "collectCoverageFrom": [
+      "src/pipedrive.ts"
+    ]
   },
   "standard": {
     "parser": "babel-eslint",
