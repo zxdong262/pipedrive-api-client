@@ -46,7 +46,7 @@ const loginUrl = pd.authorizeUri('some_state_string')
 app.get('/oauth', (req, res) {
   const { code } = req.query
   await pd.authorize(code)
-  let r = await gc.get('/v1/users/me')
+  let r = await pd.get('/v1/users/me')
     .then(d => d.data)
     .catch(console.log)
   expect(r.success).toBe(true)
