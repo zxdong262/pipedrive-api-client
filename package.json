@@ -8,7 +8,7 @@
   "module": "src/pipedrive.ts",
   "types": "dist/pipedrive",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest tests/*.spec.js --coverage --collectCoverageFrom=\"./src/pipedrive.ts\"",
     "lint": "standard",
     "release": "webpack --progress --config webpack.config.babel.js",
     "prepublishOnly": "npm run release",
@@ -43,16 +43,10 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "roots": [
-      "./tests"
-    ],
     "setupFiles": [
       "dotenv-override-true/config"
     ],
-    "silent": false,
-    "collectCoverageFrom": [
-      "src/pipedrive.ts"
-    ]
+    "silent": false
   },
   "standard": {
     "parser": "babel-eslint",

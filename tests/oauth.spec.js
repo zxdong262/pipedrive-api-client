@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import PipeDrive from '../dist/pipedrive'
+import PipeDrive from '../src/pipedrive'
 import puppeteer from 'puppeteer'
 
 const {
