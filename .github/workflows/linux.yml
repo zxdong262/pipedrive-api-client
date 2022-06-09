@@ -40,7 +40,9 @@ jobs:
         REDIRECT_URL: ${{ secrets.REDIRECT_URL }}
 
     - name: test
-      run: npm run test
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: npm run test
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
