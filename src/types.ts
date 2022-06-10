@@ -1,11 +1,10 @@
-
 interface TokenBase {
   refresh_token?: string,
   access_token?: string,
   apiToken?: string,
-  token_type?: string
-  scope?: string
-  expires_in?: number
+  token_type?: string,
+  scope?: string,
+  expires_in?: number,
   api_domain?: string
 }
 
@@ -18,12 +17,12 @@ export interface Logger {
 }
 
 export interface Options {
-  host?: string
-  apiToken?: string
-  clientId: string,
-  clientSecret: string,
+  host?: string,
+  apiToken?: string,
+  clientId?: string,
+  clientSecret?: string,
   oauthServer?: string,
-  redirectUri?: string
+  redirectUri?: string,
   appName?: string,
   appVersion?: string,
   token?: Token,

@@ -22,13 +22,6 @@ config: ${JSON.stringify(config, null, 2)}`)
 }
 
 class PipeDriveClient {
-  logger?: Logger
-  host?: string
-  apiToken?: string
-  redirectUri?: string
-  refreshRequest?: any
-  clientId?: string
-  clientSecret?: string
   token: Token
   oauthServer: string
   appName: string
@@ -36,6 +29,13 @@ class PipeDriveClient {
   appVersion: string
   _axios: AxiosInstance
   userAgentHeader: string
+  logger?: Logger
+  host?: string
+  apiToken?: string
+  redirectUri?: string
+  refreshRequest?: any
+  clientId?: string
+  clientSecret?: string
 
   static oauthServer = 'https://oauth.pipedrive.com'
 
