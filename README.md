@@ -86,46 +86,7 @@ pg.delete(url, data, options)
 pg.post(url, data, options)
 pg.put(url, data, options)
 
-// options: https://axios-http.com/docs/req_config
-export interface AxiosRequestConfig<D = any> {
-  url?: string;
-  method?: Method | string;
-  baseURL?: string;
-  transformRequest?: AxiosRequestTransformer | AxiosRequestTransformer[];
-  transformResponse?: AxiosResponseTransformer | AxiosResponseTransformer[];
-  headers?: AxiosRequestHeaders;
-  params?: any;
-  paramsSerializer?: (params: any) => string;
-  data?: D;
-  timeout?: number;
-  timeoutErrorMessage?: string;
-  withCredentials?: boolean;
-  adapter?: AxiosAdapter;
-  auth?: AxiosBasicCredentials;
-  responseType?: ResponseType;
-  responseEncoding?: responseEncoding | string;
-  xsrfCookieName?: string;
-  xsrfHeaderName?: string;
-  onUploadProgress?: (progressEvent: any) => void;
-  onDownloadProgress?: (progressEvent: any) => void;
-  maxContentLength?: number;
-  validateStatus?: ((status: number) => boolean) | null;
-  maxBodyLength?: number;
-  maxRedirects?: number;
-  beforeRedirect?: (options: Record<string, any>, responseDetails: {headers: Record<string, string>}) => void;
-  socketPath?: string | null;
-  httpAgent?: any;
-  httpsAgent?: any;
-  proxy?: AxiosProxyConfig | false;
-  cancelToken?: CancelToken;
-  decompress?: boolean;
-  transitional?: TransitionalOptions;
-  signal?: AbortSignal;
-  insecureHTTPParser?: boolean;
-  env?: {
-    FormData?: new (...args: any[]) => object;
-  };
-}
+// options: check https://axios-http.com/docs/req_config
 ```
 
 ## Test
