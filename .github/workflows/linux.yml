@@ -31,7 +31,7 @@ jobs:
     - run: npm run release
 
     - name: run server
-      run: node bin/server &
+      run: npm run s &
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}

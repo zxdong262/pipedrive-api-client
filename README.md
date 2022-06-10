@@ -58,7 +58,7 @@ app.get('/oauth', (req, res) {
 
 ```
 
-Check [bin/server.js](bin/server.js) as basic example server side code.
+Check [examples/server.js](examples/server.js) as basic example server side code.
 
 ## APIs
 

@@ -1,5 +1,5 @@
 import webpack from 'webpack'
-const pack = require('./package.json')
+const pack = require('../package.json')
 
 const defaultConfig = {
   mode: 'production',

@@ -8,9 +8,10 @@
   "module": "src/pipedrive.ts",
   "types": "dist/pipedrive",
   "scripts": {
+    "s": "node tests/server.js",
     "test": "jest tests/*.spec.js --coverage --collectCoverageFrom=\"./src/pipedrive.ts\"",
     "lint": "standard",
-    "release": "webpack --progress --config webpack.config.babel.js",
+    "release": "webpack --progress --config build/webpack.config.babel.js",
     "prepublishOnly": "npm run release",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },

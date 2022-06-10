@@ -79,7 +79,6 @@ class PipeDriveClient {
     return `${this.oauthServer}/oauth/token`
   }
 
-  /* istanbul ignore next */
   async authorize (code: string) {
     const data = `grant_type=authorization_code&code=${code}&redirect_uri=${encodeURIComponent(this.redirectUri || '')}`
     const url = this.oauthUrl()
@@ -96,9 +95,8 @@ class PipeDriveClient {
     )
   }
 
-  /* istanbul ignore next */
   async refresh () {
-    if (!this.token.refresh_token) {
+    if (!this.token?.refresh_token) {
       return
     }
     if (!this.refreshRequest) {

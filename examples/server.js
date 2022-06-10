@@ -19,7 +19,8 @@ app.get('/pipedrive-oauth', async function (req, res) {
   const r = await pd.get('/v1/users/me')
     .then(d => d.data)
     .catch(console.log)
-  console.log(r)
+  console.log('user info', r.data)
+  console.log('user token', pd.token)
   res.send(
     `<div id='result-r'>
       ${JSON.stringify(r || 'err')}
