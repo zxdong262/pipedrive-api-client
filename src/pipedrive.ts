@@ -4,23 +4,6 @@ import { Config, Data, Options, Token, Logger } from './types'
 
 const version = process.env.version
 
-export class HTTPError extends Error {
-  status: number
-  statusText: string
-  data: Data
-  config: Config
-  constructor (status: number, statusText: string, data: Data, config: Config) {
-    super(`status: ${status}
-statusText: ${statusText}
-data: ${JSON.stringify(data, null, 2)}
-config: ${JSON.stringify(config, null, 2)}`)
-    this.status = status
-    this.statusText = statusText
-    this.data = data
-    this.config = config
-  }
-}
-
 class PipeDriveClient {
   token: Token
   oauthServer: string
@@ -52,20 +35,7 @@ class PipeDriveClient {
     this.appVersion = options.appVersion || 'v0.0.1'
     this.version = version
     this.userAgentHeader = `${this.appName}/${this.appVersion} pipedrive-api-client/${version}`
-
     this._axios = axios.create()
-    const request = this._axios.request.bind(this._axios)
-    this._axios.request = (config) => {
-      try {
-        return request(config)
-      } catch (e: any) {
-        if (e.response) {
-          throw new HTTPError(e.response.status, e.response.statusText, e.response.data, e.response.config)
-        } else {
-          throw e
-        }
-      }
-    }
   }
 
   request (config: Config) {
@@ -109,6 +79,7 @@ class PipeDriveClient {
     return `${this.oauthServer}/oauth/token`
   }
 
+  /* istanbul ignore next */
   async authorize (code: string) {
     const data = `grant_type=authorization_code&code=${code}&redirect_uri=${encodeURIComponent(this.redirectUri || '')}`
     const url = this.oauthUrl()
@@ -125,6 +96,7 @@ class PipeDriveClient {
     )
   }
 
+  /* istanbul ignore next */
   async refresh () {
     if (!this.token.refresh_token) {
       return
@@ -162,6 +134,7 @@ class PipeDriveClient {
     return this.request({ ...config, method: 'put', url, data })
   }
 
+  /* istanbul ignore next */
   patch (url: string, data = undefined, config = {}) {
     return this.request({ ...config, method: 'patch', url, data })
   }

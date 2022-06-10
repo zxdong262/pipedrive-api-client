@@ -27,5 +27,12 @@ describe(pack.name, () => {
     expect(u.data.name).toBe(newName)
     const d = await pd.delete('/v1/persons/' + contact.data.id).then(d => d.data)
     expect(d.data.id).toBe(contact.data.id)
+
+    const xx = await pd.get('/v1/users/mexxx')
+      .catch(err => {
+        console.log(err)
+        return 'error'
+      })
+    expect(xx).toBe('error')
   })
 })
