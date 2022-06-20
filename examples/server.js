@@ -21,6 +21,9 @@ app.get('/pipedrive-oauth', async function (req, res) {
     .catch(console.log)
   console.log('user info', r.data)
   console.log('user token', pd.token)
+  // await pd.revoke()
+  //   .catch(console.log)
+  // console.log('user token after revoke', pd.token)
   res.send(
     `<div id='result-r'>
       ${JSON.stringify(r || 'err')}

@@ -80,6 +80,10 @@ const pd = new PipeDrive({
 // refresh token
 pd.refresh()
 
+// revoke token
+pd.revoke()
+
+
 // rest request
 pg.get(url, options)
 pg.delete(url, data, options)

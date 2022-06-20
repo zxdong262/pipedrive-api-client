@@ -116,6 +116,20 @@ class PipeDriveClient {
     this.refreshRequest = undefined
   }
 
+  async revoke () {
+    if (!this.token.access_token) {
+      return
+    }
+    await this._axios.request({
+      method: 'post',
+      url: `${this.oauthServer}/oauth/revoke`,
+      data: `token=${this.token.refresh_token}&token_type_hint=refresh_token`,
+      headers: this._basicAuthorizationHeader()
+    })
+    this.token = {}
+    return true
+  }
+
   get (url: string, config = {}) {
     return this.request({ ...config, method: 'get', url })
   }
