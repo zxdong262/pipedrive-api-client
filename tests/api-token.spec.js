@@ -36,5 +36,7 @@ describe(pack.name, () => {
     expect(xx).toBe('error')
     const ud = await pd.refresh()
     expect(ud).toBe(undefined)
+    const ud1 = await pd.revoke()
+    expect(ud1).toBe(undefined)
   })
 })
